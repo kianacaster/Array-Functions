@@ -1,6 +1,9 @@
 // Array functions for JavaScript by Kian Acaster \\
-// (Yes, I do know that a lot of these functions are in JavaScript already, but I felt like redoing it) \\
-
+// (Yes, I do know that some of these functions are in JavaScript already, but I felt like redoing it) \\
+// Current functions:
+//  - Sorting
+// - Reversing
+// - Clearing
 /* 	
 * A simple sorting function.
 * It iterates through the array,

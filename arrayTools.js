@@ -3,6 +3,7 @@
 // Current functions:
 //  - Sorting
 // - Reversing
+// - Selective removal (remove all types of something from an array, e.g. all numbers, all strings etc.)
 // - Clearing
 /* 	
 * A simple sorting function.

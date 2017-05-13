@@ -18,6 +18,8 @@
 // - Invert function (make a negative number positive, and a positive number negative)
 // - Convert to string (turns a value into a string)
 // - Convert to number (turns a value into a number)
+// - Convert a number to hex (turn a base 10 number to base 16)
+// - Convert a number from hex (turn a base 16 number into base 10)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /* 	
@@ -292,8 +294,14 @@ function invert(value){
 * the process. It uses the inbuilt JavaScript
 * function to convert it.
 */
-function str(value){
-	return value.toString(); // Return the string value of the number
+function str(value, base){
+	if(base !== undefined && typeof base == "number"){
+		return value.toString(base); // Return the string value of the number
+	}else if(base == undefined){
+		return value.toString();
+	}else{
+		return undefined;
+	}	
 }
 /*
 * A function to convert a value (like a string) to an number.
@@ -302,6 +310,20 @@ function str(value){
 * It's just a function to shorten
 * the process for the user. 
 */
-function number(value){
-	return parseFloat(value);
+function number(value, base){
+	return parseFloat(value, base);	
+}
+/*
+* A function to convert a decimal value to hex.
+* It uses the str function and the base parameter
+* to do this easily.
+*/
+function toHex(value){
+	return str(value, 16).toUpperCase(); // Return the uppercase value of the string value of the parameter "value" in base 16.
+}
+/*
+* A function to convert a hex value to decimal.
+*/
+function fromHex(value){
+	return parseInt(toHex(value), 16); // Return the number value of the string value of the parameter "value" in base 10.
 }

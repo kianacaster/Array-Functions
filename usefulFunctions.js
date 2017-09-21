@@ -214,38 +214,15 @@ function random(param1, param2){
 * (e.g. 4.5 -> 4 : 4.7 -> 4 : 4.1 -> 4 : 4.9 -> 4)
 */
 function floor(value){
-	if(typeof value == "number"){
-		if(value % 1 == 0){ // If the value is a whole number already...
-			return value; // Return it.
-		}else{
-			var numstring = value.toString(); // Turn the value to a string
-			var stringArray = []; // Make an array
-			var newstring = ""; // Define an empty string
-			for(var i = 0; i < numstring.length; i++){ // Iterate over the string of the value
-				stringArray.push(numstring.charAt(i)); // Push each character from the string to the array
-			}
-			for(var i = 0; i < stringArray.length; i++){ // Iterate over the array
-				if(stringArray[i] !== "."){ // If the current index is not a decimal point
-					newstring += stringArray[i]; // Add the value in the array to the string
-				}else{ // If we have encountered the decimal point
-					return parseInt(newstring); // Return an integer value of the string that was generated
-				}
-			}
-		}
-	}else{
-		return NaN;
-	}
+	return value - value % 1;
 }
 /*
 * A ceiling function.
 * This rounds numbers up, no matter what.
 * (e.g. 4.5 -> 5 : 4.7 -> 5 : 4.1 -> 5 : 4.9 -> 5)
-* Here, the floor function is used to do most of the work.
-* Just add one to the number and floor it, then that's
-* the same value as rounding it up.
 */
 function ceil(value){
-	return floor(value + 1); // Return the floor of the value + 1
+	return(value % 1 == 0 ? value : value + 1 - value % 1);
 }
 /*
 * A function to round a number.

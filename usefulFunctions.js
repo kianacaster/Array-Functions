@@ -1,5 +1,4 @@
 // Useful functions for JavaScript by Kian Acaster \\
-// (Yes, I do know that some of these functions are in JavaScript already, but I felt like redoing it) \\
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Current functions:
 // - Sorting an array (using Bubblesort)
